@@ -16,6 +16,7 @@ Route::post('/ceklogin','Logincontroller@ceklogin');
 Route::get('/logout','Logincontroller@logout');
 Route::post('/savetask','Taskcontroller@create');
 Route::post('/savepoint','Taskcontroller@createpoint');
+Route::get('/register','Registercontroller@index');
 Route::group(['middleware' => 'auth'],function(){
     Route::get('/dashboard','Maincontroller@index');
     //task

@@ -4,7 +4,7 @@
     <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border:0px solid black;">
-              <a href="#" class="site_title"><i class="fa fa-certificate"></i> <span><small>SIBASKOM</small></span></a>
+              <a href="#" class="site_title"><i class="fa fa-bank"></i> <span><small>SISPKOP</small></span></a>
             </div>
             
             <div class="clearfix"></div>
@@ -28,24 +28,30 @@
               @if (auth()->user()->level == '1')
               <ul class="nav side-menu">
                     <h3>General</h3>
-               <li><a href="/sibaskom/dashboard"><i class="fa fa-home"></i> Dashboard </a></li>
-               <!-- <li><a href="/sibaskom/liststaff"><i class="fa fa-users"></i> List Staff </a></li> -->
-               <li><a href="/sibaskom/listuser"><i class="fa fa-users"></i> List Pengguna </a></li>
-               <h3>Task</h3>
-               <li><a href="/sibaskom/mytask"><i class="fa fa-list"></i> My Task </a></li>
+               <li><a href="/sispkop/dashboard"><i class="fa fa-home"></i> Dashboard </a></li>
+               <!-- <li><a href="/sispkop/liststaff"><i class="fa fa-users"></i> List Staff </a></li> -->
+               <li><a href="/sispkop/listuser"><i class="fa fa-users"></i> List Pengguna </a></li>
+               <h3>Data Anggota Koperasi</h3>
+               <li><a href="/sispkop/mytask"><i class="fa fa-money"></i> Simpanan Anggota </a></li>
+               <li><a href="/sispkop/mytask"><i class="fa fa-money"></i> Pinjaman Anggota </a></li>
+               <li><a href="/sispkop/mytask"><i class="fa fa-money"></i> Angsuran Anggota</a></li>
+               <h3>Laporan</h3>
+               <li><a href="/sispkop/mytask"><i class="fa fa-file-pdf-o"></i> Laporan Bulanan </a></li>
+               <li><a href="/sispkop/mytask"><i class="fa fa-file-pdf-o"></i> Laporan Tahunan </a></li>
               <h3>Others</h3>
-              <li><a href="/sibaskom/logout"><i class="fa fa-sign-out"></i> Logout </a></li>
+              <li><a href="/sispkop/logout"><i class="fa fa-sign-out"></i> Logout </a></li>
               
                     </ul>
                     @else
                     <ul class="nav side-menu">
                     <h3>General</h3>
-               <li><a href="/sibaskom/dashboard"><i class="fa fa-home"></i> Dashboard </a></li>
-               <!-- <li><a href="/sibaskom/liststaff"><i class="fa fa-users"></i> List Staff </a></li> -->
-               <h3>Task</h3>
-               <li><a href="/sibaskom/mytask"><i class="fa fa-list"></i> My Task </a></li>
+               <li><a href="/sispkop/dashboard"><i class="fa fa-home"></i> Dashboard </a></li>
+               <!-- <li><a href="/sispkop/liststaff"><i class="fa fa-users"></i> List Staff </a></li> -->
+               <h3>Data Transaksi</h3>
+               <li><a href="/sispkop/mytask"><i class="fa fa-money"></i> Pinjaman </a></li>
+               <li><a href="/sispkop/mytask"><i class="fa fa-money"></i> Angsuran </a></li>
                <h3>Others</h3>
-              <li><a href="/sibaskom/logout"><i class="fa fa-sign-out"></i> Logout </a></li>
+              <li><a href="/sispkop/logout"><i class="fa fa-sign-out"></i> Logout </a></li>
               
                     </ul>
                     @endif

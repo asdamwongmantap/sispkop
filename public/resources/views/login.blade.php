@@ -44,26 +44,38 @@
     <!-- end small modal -->
         <div class="animate form login_form">
           <section class="login_content">
-		  <img src="{{ asset('/assets/images/logoawr.png')}}" style="height:30%;width:30%;">
+		  <img src="{{ asset('/assets/images/logokoperasipng.png')}}" style="height:30%;width:30%;">
             <form action="/sispkop/ceklogin" method="POST">
             <!-- @csrf -->
             {{csrf_field()}}
 			<h1>SISPKOP</h1>
-              <div>
+              <!-- <div>
                 <input type="text" class="form-control" placeholder="Username" name="email" required="" />
-              </div>
-              <div>
+              </div> -->
+            <div class="form-group">
+						  <label class="control-label col-md-12 col-sm-12 col-xs-12" for="username" style="text-align:left;">Username</label>
+						<div class="col-md-12 col-sm-12 col-xs-12">
+              <input type="text" class="form-control" placeholder="Username" name="email" required="" />
+						</div>
+					</div>
+              <!-- <div>
                 <input type="password" class="form-control" placeholder="Password" name="password" required="" />
-              </div>
+              </div> -->
+              <div class="form-group">
+						  <label class="control-label col-md-12 col-sm-12 col-xs-12" for="password" style="text-align:left;">Password</label>
+						<div class="col-md-12 col-sm-12 col-xs-12">
+            <input type="password" class="form-control" placeholder="Password" name="password" required="" />
+						</div>
+					</div>
 			  <div>
                 <button type="submit" class="btn btn-primary">LOG IN</button>
-                
-				
+               
               </div>
 			  
 			  <div class="separator">
 			  <div>
-				<h5>How To Login ? &nbsp;<a style="cursor:pointer;text-decoration:none;color:blue;" data-toggle="modal" data-target=".bs-example-modal-sm">Login Guide</a></h5>
+        <!-- <h5>How To Login ? &nbsp;<a style="cursor:pointer;text-decoration:none;color:blue;" data-toggle="modal" data-target=".bs-example-modal-sm">Login Guide</a></h5> -->
+        <h5>Don't Have Account ? &nbsp;<a style="cursor:pointer;text-decoration:none;color:blue;" href="/sispkop/register">REGISTER</a></h5>
 			  </div>
 			  <div class="clearfix"></div>
                <div>

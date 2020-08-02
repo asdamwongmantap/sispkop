@@ -3,9 +3,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="icon" href="{{ asset('/assets/images/logoawr.png')}}" type="image/ico" />
+	<link rel="icon" href="{{ asset('/assets/images/logokoperasipng.png')}}" type="image/ico" />
 
-<title>SIBASKOM </title>
+<title>SISPKOP </title>
 
 	<script src="{{ asset('/assets/js/jquery.js')}}"></script>
     <!-- Bootstrap -->

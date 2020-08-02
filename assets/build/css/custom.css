@@ -3411,14 +3411,14 @@ a.hiddenanchor {
     right: 0px;
     margin: 0px auto;
     margin-top: 5%;
-    max-width: 350px;
+    max-width: 1024px;
     position: relative
 }
 .registration_form,
 .login_form {
-    position: absolute;
+    /* position: absolute; */
     top: 0px;
-    width: 100%
+    width: 100%;
 }
 .registration_form {
     z-index: 21;
