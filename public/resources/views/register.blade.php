@@ -29,7 +29,7 @@
                 <div class="x_content" style="height:100%">
                 <medium>Yang  bertanda-tangan  di bawah  ini  :</medium>
                 <div>&nbsp;</div>
-                <form id="form-addbarangkiriman" data-parsley-validate class="form-horizontal form-label-left" method="post">
+                <form id="form-addmember" data-parsley-validate class="form-horizontal form-label-left" method="post">
                     {{csrf_field()}}
 					
 					<div class="form-group">
@@ -41,6 +41,14 @@
 						<div class="col-md-6 col-sm-6 col-xs-12">
 							<input type="text" class="form-control col-md-7 col-xs-12" id="nama" name="nama" aria-describedby="nama" placeholder="Nama">
 						</div>
+					</div>
+					<div class="form-group">
+						<label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: left;" for="email">Email
+						</label>
+						<div class="col-md-9 col-sm-9 col-xs-12">
+							<input type="text" class="form-control col-md-7 col-xs-12" id="email" name="email" aria-describedby="email" placeholder="Email">
+						</div>
+					
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3 col-sm-3 col-xs-12" style="text-align: left;" for="nik">Tgl. NIK (Tgl. Masuk Kerja)
@@ -85,7 +93,7 @@
            
           </div>
           <div>&nbsp;</div>
-            <medium>Dengan  ini  saya  mendaftarkan  diri  untuk  menjadi   Anggota   Koperasi   Pegawai   Samudera - Indonesia  dan  saya  bersedia /sanggup  mematuhi  peraturan-peraturan sesuai  dengan   Anggaran Dasar  dan  Anggaran  Rumah  Tangga  yang  telah  ditetapkan  Koperasi  PSI.</medium>
+            <medium>Dengan  ini  saya  mendaftarkan  diri  untuk  menjadi   Anggota   Koperasi   Pegawai  dan  saya  bersedia /sanggup  mematuhi  peraturan-peraturan sesuai  dengan   Anggaran Dasar  dan  Anggaran  Rumah  Tangga  yang  telah  ditetapkan  Koperasi  PSI.</medium>
           <p></p>
 
             <medium>Sebagai tanda keikut-sertaan saya,  bersama  ini  saya  setorkan  simpanan  pokok, simpanan  wajib dan  simpanan  sukarela,  dengan  cara  pemotongan  gaji  bulanan  saya,  sbb.:</medium></br>
@@ -110,10 +118,71 @@
               </div>
             </div>
 	<!-- jQuery -->
-    <script src="{{ asset('/assets/vendors/jquery/dist/jquery.min.js')}}"></script>
+    <!-- <script src="{{ asset('/assets/vendors/jquery/dist/jquery.min.js')}}"></script> -->
     <!-- Bootstrap -->
-    <script src="{{ asset('/assets/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script>
+    <!-- <script src="{{ asset('/assets/vendors/bootstrap/dist/js/bootstrap.min.js')}}"></script> -->
 	 <!-- Custom Theme Scripts -->
-    <script src="{{ asset('/assets/build/js/custom.min.js')}}"></script>
+	<!-- <script src="{{ asset('/assets/build/js/custom.min.js')}}"></script> -->
+	@include('template/footermeta')
+	<script type="text/javascript">
+		 $('#form-addmember').on('submit',function(e) {
+			var form = $('#form-addmember')[0];
+			var data = new FormData(form);
+			swal({
+			  title: "Simpan Data",
+			  text: "Apakah anda ingin melakukan pendaftaran ?",
+			  confirmButtonText:"Yakin",
+			  confirmButtonColor: "#002855",
+			  cancelButtonText:"Tidak",
+			  showCancelButton: true,
+			  closeOnConfirm: false,
+			  type: "warning",
+			  showLoaderOnConfirm: true
+			}, function () {
+				$.ajax({
+					type: "POST",
+					enctype: 'multipart/form-data',
+					url:"{{url('/savemember')}}",
+					data: data,
+					processData: false,
+					contentType: false,
+					cache: false,
+					success:function(e){
+						if (e !== "error") {
+						swal({
+						  title: "Success",
+						  confirmButtonColor: "#002855",
+						  text: "Data berhasil disimpan !.",
+						  type: "success"
+						},function(){
+							window.location='/sispkop';
+						  });
+						}
+						else{
+						swal({
+						  title: "Failed",
+						  confirmButtonColor: "#002855",
+						  text: e+"1",
+						  type: "error"
+						});
+						}
+						
+					},
+					error:function(xhr, ajaxOptions, thrownError){
+						swal({
+						  title: "Failed",
+						  confirmButtonColor: "#002855",
+						  text: e+"2",
+						  type: "error"
+						});
+					}
+					
+				});
+				return false;
+			});
+			e.preventDefault(); 
+		  });
+		  
+    </script> 
   </body>
 </html>
